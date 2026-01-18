@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP Login</title>
+    <link rel="stylesheet" href="Stylesheet{index}.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+
+    <!-- LEFT PANEL -->
+    <div class="login-left">
+        <img src="logo without bg.png" alt="Company Logo">
+        <p>ERP SYSTEM</p>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="login-right">
+        <h2>Welcome</h2>
+        <p class="subtext">ScriptedIn</p>
+
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+
+        <button onclick="login()" href="deshboard.html">Login</button>
+        <span id="error-msg"></span>
+    </div>
+
+</div>
+
+<script>
+
+    const users = [
+        { username: "admin", password: "admin123" },
+        { username: "kartik", password: "kartik22" },
+        { username: "staff1", password: "staff123" }
+    ];
+
+    function login() {
+        const username = document.getElementById("username").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const errorMsg = document.getElementById("error-msg");
+
+        const validUser = users.find(
+            user => user.username === username && user.password === password
+        );
+
+        if (validUser) {
+            localStorage.setItem("loggedInUser", validUser.username);
+            window.location.href = "deshboard.html";
+        } else {
+            errorMsg.textContent = "Invalid username or password";
+        }
+    }
+</script>
+
+</body>
+</html>

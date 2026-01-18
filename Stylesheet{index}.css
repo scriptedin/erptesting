@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #1f3a3d, #000000);
+}
+
+.login-wrapper {
+    width: 900px;
+    height: 520px;
+    background: #ffffff;
+    display: flex;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* LEFT PANEL */
+.login-left {
+    width: 45%;
+    background: #1f3a3d;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-left img {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.login-left p {
+    font-size: 14px;
+    letter-spacing: 1px;
+    opacity: 0.85;
+}
+
+/* RIGHT PANEL */
+.login-right {
+    width: 55%;
+    padding: 80px 70px;
+}
+
+.login-right h2 {
+    font-size: 28px;
+    color: #243f43;
+    margin-bottom: 8px;
+}
+
+.subtext {
+    color: #7b8b92;
+    margin-bottom: 40px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #243f43;
+}
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: #243f43;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1f3a3d;
+}
+
+#error-msg {
+    display: block;
+    margin-top: 12px;
+    color: #c0392b;
+    font-size: 14px;
+}
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .login-wrapper {
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .login-left,
+    .login-right {
+        width: 100%;
+    }
+
+    .login-left {
+        height: 220px;
+    }
+
+    .login-right {
+        padding: 50px 40px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .login-wrapper {
+        border-radius: 10px;
+    }
+
+    .login-left {
+        height: 180px;
+    }
+
+    .login-left img {
+        width: 120px;
+    }
+
+    .login-left p {
+        font-size: 12px;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    .login-right {
+        padding: 40px 25px;
+    }
+
+    .login-right h2 {
+        font-size: 22px;
+    }
+
+    .subtext {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+
+    input,
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
